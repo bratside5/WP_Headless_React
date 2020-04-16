@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  react:
+    container_name: react
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - 3000:3000
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    stdin_open: true
+    # networks:
+    #   - traefik_default
+    # labels:
+    #   - 'traefik.port=3000'
+    #   - 'traefik.enable=true'
+    #   - 'traefik.docker.network=traefik_default'
+    #   - 'traefik.http.routers.yourdomain-http.rule=Host(`api.igbot.local`, `www.api.igbot.local`)'
+# networks:
+#   traefik_default:
+#     external: true
