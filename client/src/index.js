@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import "tailwindcss/dist/base.css";
 import App from "./App";
 import { PropertyProvider } from "./context/PropertyContext";
 import { TagsProvider } from "./context/TagsContext";

@@ -1,12 +1,13 @@
 import React from "react";
 import "./index.css";
-import Test from "./components/Test";
+import Navbar from "./components/Navbar";
+import LandingPage from "./views/LandingPage";
 
 const App = () => {
   return (
     <>
-      <p>Hello</p>
-      <Test />
+      <Navbar />
+      <LandingPage />
     </>
   );
 };

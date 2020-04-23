@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMountain,
@@ -7,7 +7,7 @@ import {
   faSnowflake,
 } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
-import tw from "tailwind.macro";
+// import tw from "tailwind.macro";
 import PropertyContext from "../context/PropertyContext";
 import TagsContext from "../context/TagsContext";
 

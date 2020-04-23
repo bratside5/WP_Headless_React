@@ -8,10 +8,9 @@ export const TagsProvider = ({ children }) => {
   }, []);
   const [items, setItems] = useState([]);
   const fetchItem = async () => {
-    const fetchItem = await fetch(`http://api.igbot.local/wp-json/wp/v2/tags`);
+    const fetchItem = await fetch(`http://api.igbot.local/wp-json/wp/v2/tags/`);
     const items = await fetchItem.json();
     setItems(items);
-    console.log(items);
   };
 
   return <TagsContext.Provider value={items}>{children}</TagsContext.Provider>;
