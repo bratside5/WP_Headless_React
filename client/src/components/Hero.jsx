@@ -15,6 +15,7 @@ const Hero = () => {
   const context = useContext(PropertyContext);
   const mapState = context.map((result) => result.x_featured_media_original);
   const [HeroImage, setHeroImage] = useState(mapState[0]);
+  console.log(setHeroImage);
   return (
     <>
       <HeroWrapper>

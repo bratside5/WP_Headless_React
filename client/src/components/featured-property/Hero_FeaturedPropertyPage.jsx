@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React from "react";
 import tw from "twin.macro";
 
 function FeaturedPropertyHeroImage({ item }) {

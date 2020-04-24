@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import tw from "twin.macro";
+// import tw from "twin.macro";
 import HeroFPP from "./Hero_FeaturedPropertyPage";
+import Section1 from "./Section1_FeaturedPropertyPage";
 
 const FeaturedPropertyPage = (props) => {
   const { id } = useParams();
@@ -19,11 +20,13 @@ const FeaturedPropertyPage = (props) => {
     );
     const item = await fetchItem.json();
     setItem(item);
+    console.log(item);
   };
 
   return (
     <>
       <HeroFPP item={item} />
+      <Section1 item={item} />
     </>
   );
 };
