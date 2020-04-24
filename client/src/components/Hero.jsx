@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import tw from "twin.macro";
+import PropertyContext from "../context/PropertyContext";
 
 const HeroWrapper = tw.div`relative pt-16 pb-32 flex content-center items-center justify-center overflow-hidden`;
 const HeroImgContainer = tw.div`absolute top-0 w-full h-full bg-center bg-cover`;
@@ -11,13 +12,15 @@ const HeroHeader = tw.h1`text-white font-semibold text-5xl`;
 const HeroSubHeader = tw.p`mt-4 md:p-8 text-lg text-gray-300`;
 
 const Hero = () => {
+  const context = useContext(PropertyContext);
+  const mapState = context.map((result) => result.x_featured_media_original);
+  const [HeroImage, setHeroImage] = useState(mapState[0]);
   return (
     <>
       <HeroWrapper>
         <HeroImgContainer
           style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1551309292-e185c0b6e22a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjI0MX0&auto=format&fit=crop&w=750&q=80')",
+            backgroundImage: `url('${HeroImage}')`,
           }}
         >
           <ImgOverlay id="blackOverlay"></ImgOverlay>
