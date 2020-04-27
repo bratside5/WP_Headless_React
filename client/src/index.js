@@ -4,15 +4,15 @@ import "./index.css";
 import "tailwindcss/dist/base.css";
 import App from "./App";
 import { PropertyProvider } from "./context/PropertyContext";
-import { TagsProvider } from "./context/TagsContext";
+import { BlogProvider } from "./context/BlogContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <TagsProvider>
+    <BlogProvider>
       <PropertyProvider>
         <App />
       </PropertyProvider>
-    </TagsProvider>
+    </BlogProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

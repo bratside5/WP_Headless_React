@@ -14,9 +14,7 @@ const FeaturedPropertyPage = (props) => {
     acf: {},
   });
   const fetchItem = async () => {
-    const fetchItem = await fetch(
-      `http://api.igbot.local/wp-json/wp/v2/products/${id}`
-    );
+    const fetchItem = await fetch(`/wp-json/wp/v2/products/${id}`);
     const item = await fetchItem.json();
     setItem(item);
   };

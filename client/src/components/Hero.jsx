@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import tw from "twin.macro";
 import PropertyContext from "../context/PropertyContext";
 import {
   HeroWrapper,

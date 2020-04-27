@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import FeaturedPropertyPage from "./components/featured-property/FeaturedPropertyPage";
 import Header from "./components/navigation/Header";
 import BlogList from "./components/blog/BlogList";
+import BlogPage from "./components/blog/BlogPage";
+import PageNotFound from "./components/PageNotFound";
 
 const App = () => {
   return (
@@ -25,10 +27,10 @@ const App = () => {
             <BlogList />
           </Route>
           <Route path="/latest-news/:id">
-            {/* <FeaturedPropertyPage /> */}
+            <BlogPage />
           </Route>
           <Route>
-            <NoMatchPage />
+            <PageNotFound />
           </Route>
         </Switch>
       </Router>
@@ -37,11 +39,3 @@ const App = () => {
 };
 
 export default App;
-
-export const NoMatchPage = () => {
-  return (
-    <div>
-      <h1>404 Error | Page Not Found...</h1>
-    </div>
-  );
-};

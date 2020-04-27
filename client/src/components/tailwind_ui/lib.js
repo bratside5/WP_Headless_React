@@ -12,6 +12,7 @@ export const Divider = tw.div`flex h-px w-3/4 bg-gray-400 justify-center content
 export const IconContainer = tw.div`flex-col min-w-full text-xs font-semibold`;
 export const CardIcons = tw.div`flex justify-center content-start align-text-top py-1 mt-1 text-gray-600 `;
 export const IconText = tw.div`w-3/4 flex justify-start content-start pl-4 pb-1`;
+export const CardExcerpt = tw.div`text-gray-700 px-1 max-h-full truncate`;
 
 // Hero
 export const HeroWrapper = tw.div`relative pt-16 pb-32 flex content-center items-center justify-center overflow-hidden`;
