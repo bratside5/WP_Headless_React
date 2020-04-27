@@ -1,20 +1,21 @@
 import React from "react";
-import FeaturedPropertyCard from "./FeaturedPropertyCard";
+import tw from "twin.macro";
+import BlogCard from "./BlogCard";
 import {
   GridWrapper,
   GridContainer,
   SectionTitle,
   CardContainer,
-} from "../tailwind_ui/lib";
+} from "../tailwind_ui/lib.js";
 
-const FeaturedPropertiesList = () => {
+const BlogList = () => {
   return (
     <>
       <GridWrapper>
-        <SectionTitle>Featured Properties</SectionTitle>
+        <SectionTitle>Latest News</SectionTitle>
         <GridContainer>
           <CardContainer>
-            <FeaturedPropertyCard />
+            <BlogCard />
           </CardContainer>
         </GridContainer>
       </GridWrapper>
@@ -22,4 +23,4 @@ const FeaturedPropertiesList = () => {
   );
 };
 
-export default FeaturedPropertiesList;
+export default BlogList;

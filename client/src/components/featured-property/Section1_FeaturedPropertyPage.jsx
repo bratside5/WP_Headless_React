@@ -1,5 +1,4 @@
 import React from "react";
-import tw from "twin.macro";
 
 function Section1_FeaturedProperty({ item }) {
   return (
