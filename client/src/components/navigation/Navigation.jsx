@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { useTransition, animated } from "react-spring";
+import { useTransition } from "react-spring";
 import NavigationMenu from "./NavigationMenu";
 import { NavBar, Span, MenuFadeIn, MenuFadeOut } from "../tailwind_ui/lib";
 
@@ -29,23 +29,19 @@ function Navigation() {
       {maskTransitions.map(
         ({ item, key, props }) =>
           item && (
-            <MenuFadeIn>
-              <animated.div
-                key={key}
-                style={props}
-                onClick={() => setShowMenu(false)}
-              ></animated.div>
-            </MenuFadeIn>
+            <MenuFadeIn
+              onClick={() => setShowMenu(false)}
+              key={key}
+              style={props}
+            ></MenuFadeIn>
           )
       )}
 
       {menuTransitions.map(
         ({ item, key, props }) =>
           item && (
-            <MenuFadeOut>
-              <animated.div key={key} style={props}>
-                <NavigationMenu closeMenu={() => setShowMenu(false)} />
-              </animated.div>
+            <MenuFadeOut key={key} style={props}>
+              <NavigationMenu closeMenu={() => setShowMenu(false)} />
             </MenuFadeOut>
           )
       )}
