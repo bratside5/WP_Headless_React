@@ -1,11 +1,16 @@
 import React from "react";
 import "./index.css";
 import FeaturedProperty from "./views/FeaturedProperty";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  useLocation,
+} from "react-router-dom";
 import FeaturedPropertyPage from "./components/featured-property/FeaturedPropertyPage";
 import BlogList from "./components/blog/BlogList";
 import BlogPage from "./components/blog/BlogPage";
-import PageNotFound from "./components/PageNotFound";
+// import PageNotFound from "./components/PageNotFound";
 import Header from "./components/navigation/Header";
 import Profile from "./views/Profile";
 import SignIn from "./views/SignIn";
@@ -38,8 +43,11 @@ const App = () => {
             <Route path="/latest-news/:id">
               <BlogPage />
             </Route>
-            <Route>
+            {/* <Route>
               <PageNotFound />
+            </Route> */}
+            <Route path="*/featured-properties/undefined">
+              <NoMatch />
             </Route>
           </Switch>
         </Router>
@@ -49,3 +57,15 @@ const App = () => {
 };
 
 export default App;
+
+function NoMatch() {
+  let location = useLocation();
+
+  return (
+    <div>
+      <h3>
+        No match for <code>{location.pathname}</code>
+      </h3>
+    </div>
+  );
+}

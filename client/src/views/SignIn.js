@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import { Redirect, Link } from "react-router-dom";
-import app, { signInWithGoogle, auth } from "../config/firebase";
+import app, { signInWithGoogle } from "../config/firebase";
 
 import { useUser } from "../hooks";
 

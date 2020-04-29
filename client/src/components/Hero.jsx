@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import PropertyContext from "../context/PropertyContext";
 import {
   HeroWrapper,
@@ -13,8 +13,8 @@ import {
 
 const Hero = () => {
   const context = useContext(PropertyContext);
-  const mapState = context.map((result) => result.x_featured_media_original);
-  const [HeroImage, setHeroImage] = useState(mapState[0]);
+  const mapImage = context.map((result) => result.x_featured_media_original);
+  const HeroImage = mapImage[0];
 
   return (
     <>
