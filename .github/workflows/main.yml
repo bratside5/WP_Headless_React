@@ -21,11 +21,11 @@ jobs:
       - name: Install dependencies
         working-directory: client
         run: |
-          npm ci
+          npm install
       - name: Build
         working-directory: client
         run: |
-          npm run build:prod
+          npm run build
 
       - uses: w9jds/firebase-action@master
         with:
