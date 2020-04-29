@@ -3,21 +3,30 @@ name: CI
 on:
   push:
     branches:
-    - master
-    - release/*
+      - master
+      - release/*
 
 jobs:
   firebase-deploy:
-
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
         with:
-          node-version: '10.x'
-      - run: npm install
-      - run: npm run build:prod
+          node-version: "10.x"
+      - name: Build site assets
+        working-directory: ${{ github.workspace }}
+        run: ls -la
+      - name: Install dependencies
+        working-directory: client
+        run: |
+          npm ci
+      - name: Build
+        working-directory: client
+        run: |
+          npm run build:prod
+
       - uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting
